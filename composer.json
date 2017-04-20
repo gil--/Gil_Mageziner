@@ -1,0 +1,28 @@
+{
+  "name": "gil/mageiner",
+  "description": "Magento Frontend Theme Customizer",
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0"
+  },
+  "type": "magento2-module",
+  "version": "0.0.1",
+  "license": [
+    "MIT"
+  ],
+  "authors": [
+    {
+      "name": "gil Greenberg",
+      "email": "gilgreenberg@gmail.com",
+      "homepage": "https://www.gilgreenberg.com/",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Gil\\Mageziner\\": ""
+    }
+  }
+}

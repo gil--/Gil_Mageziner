@@ -1,0 +1,343 @@
+$c-dark: #eee;
+$c-darker: #ddd;
+$c-darkest: #000;
+$c-mgz-brand: #f06212;
+$c-dark-bg: #23262e;
+
+// Wrap ALL styles inside .mageziner or Magento UI will fuck with it.
+.mageziner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  padding-bottom: 50px;
+  letter-spacing: 0;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif; // stolen from Medium
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: white;
+  background-color: #171717;
+  transition: transform .25s ease-in;
+  transform: translateX(calc(-100% - 2px));
+  box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+
+  [hidden] {
+    display: none !important;
+  }
+
+  input {
+    &[type="text"],
+    &[type="url"],
+    &[type="color"]  {
+      min-height: 40px;
+      padding: 5px 10px;
+      color: #fff;
+      background-color: $c-dark-bg;
+      border: 1px solid $c-dark-bg;
+      border-radius: 0;
+    }
+
+    &[type="text"],
+    &[type="url"] {
+      width: 100%;
+    }
+
+    &:focus {
+      border-color: $c-mgz-brand;
+      outline: 0;
+      box-shadow: none !important;
+    }
+
+    &[type="color"] {
+      padding: 0;
+      border: 0;
+    }
+  }
+
+  select {
+    border-radius: 0;
+    width: 100%;
+    min-height: 40px;
+  }
+
+  &--open {
+   transform: none;
+
+    .mgz-close {
+      transform: translate(25px, 7px);
+    }
+  }
+
+  &__container {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  &__header {
+    padding: 0 20px;
+    background-color: $c-dark-bg;
+
+    h2 {
+      margin: 0;
+      padding: 20px 0;
+      font-size: 16px;
+    }
+  }
+
+  &__panel {
+    position: relative;
+    background-color: #171717;
+    z-index: 1;
+    display: none;
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    margin: 0 -20px;
+    padding-right: 36px;
+    background-color: black;
+
+    button {
+      position: relative;
+      padding: 10px 20px;
+      padding-left: 35px;
+      letter-spacing: 3px;
+      font-size: 14px;
+      font-weight: normal;
+      text-transform: uppercase;
+      color: $c-mgz-brand;
+      background-color: transparent;
+      border: 0;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjAiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNmMDYyMSIgPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBmb250LWZhbWlseT0ibm9uZSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9InN0YXJ0IiBtaXgtYmxlbmQtbW9kZT0ibm9ybWFsIj48Zz48Zz48cGF0aCBkPSJNMCwyNGwwLC0yNGwyNCwwbDAsMjR6IiBmaWxsPSJub25lIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PC9wYXRoPjxnIGZpbGw9IiNmMDYyMTEiIGZvbnQtZmFtaWx5PSJCaXRzdHJlYW0gVmVyYSBTYW5zIj48cGF0aCBkPSJNMTEsNWwwLDZsLTYsMGwwLDJsNiwwbDAsNmwyLDBsMCwtNmw2LDBsMCwtMmwtNiwwbDAsLTZ6Ij48L3BhdGg+PC9nPjxnIGZpbGw9Im5vbmUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj48L2c+PC9nPjwvZz48L2c+PC9zdmc+') 50% 50% no-repeat;
+        background-size: 100%;
+        width: 20px;
+        height: 20px;
+        transform: translateY(-50%);
+      }
+
+      &[aria-expanded="true"]:before {
+        content: '';
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjAiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNmMDYyMSIgPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBmb250LWZhbWlseT0ibm9uZSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9InN0YXJ0IiBtaXgtYmxlbmQtbW9kZT0ibm9ybWFsIj48Zz48Zz48cGF0aCBkPSJNMCwyNGwwLC0yNGwyNCwwbDAsMjR6IiBmaWxsPSJub25lIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PC9wYXRoPjxnIGZpbGw9IiNmMDYyMTEiIGZvbnQtZmFtaWx5PSJCaXRzdHJlYW0gVmVyYSBTYW5zIj48cGF0aCBkPSJNNSwxMWwwLDJsMTQsMGwwLC0yeiI+PC9wYXRoPjwvZz48ZyBmaWxsPSJub25lIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==') 50% 50% no-repeat;
+      }
+
+      &:hover,
+      &:focus {
+        color: $c-mgz-brand;
+        background: transparent;
+        border: 0;
+      }
+    }
+
+    &:after {
+      content: '';
+      border-right: 12px solid #171717;
+      border-bottom: 12px solid #171717;
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__section {
+    padding: 0 20px 10px;
+    border-top: 3px solid black;
+    opacity: .8;
+    transition: opacity .16s ease-in;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: .5em;
+    color: $c-mgz-brand;
+    border-top: 2px solid black;
+
+    button {
+      max-width: calc(50% - 2px);
+      background-color: black;
+    }
+  }
+
+  // Select 2 Styling Overrides
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 40px;
+    color: white;
+  }
+
+  .select2 {
+    width: 100% !important;
+  }
+
+  .select2-container--default .select2-selection--single {
+    border: 0;
+    border-radius: 0;
+    background-color: $c-dark-bg;
+    min-height: 40px;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 40px;
+  }
+
+  .select2-dropdown {
+    background-color: black;
+    color: white;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .mgz-options {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .mgz-close {
+    position: absolute;
+    top: 19px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background-color: $c-mgz-brand;
+    border: 0;
+    border-radius: 3px;
+    z-index: 2;
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transform: translate(50px, 7px);
+    transition: translate .5s ease-in;
+    transition-delay: .25s;
+
+    &:hover,
+    &:focus {
+      background-color: black;
+
+      svg * {
+        fill: $c-mgz-brand;
+      }
+    }
+
+    svg * {
+      fill: black;
+    }
+  }
+
+  .mgz-option__label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .mgz-checkbox {
+    display: block;
+    padding: 5px 10px;
+    background-color: $c-dark-bg;
+  }
+
+  .mgz-button-transparent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    width: calc(100% + 40px);
+    margin: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: $c-mgz-brand;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: white;
+    }
+
+    svg {
+      margin-right: 10px;
+
+      * {
+        fill: currentColor;
+      }
+    }
+  }
+
+  .mgz-color-input {
+    display: flex;
+    align-items: center;
+
+    input {
+      max-width: 100%;
+    }
+
+    [type="color"] {
+      width: 50px;
+    }
+  }
+
+  .mgz-visuallyhidden {
+    display: none;
+  }
+
+  /* Chrome styles */
+  input[type=color] {
+    &::-webkit-color-swatch-wrapper {
+    padding: 3px; /* Remove browser's padding around color picker */
+      border: none;
+    }
+    &::-webkit-color-swatch {
+    border: none;
+    }
+    /* Firefox styles */
+    &::-moz-color-swatch {
+      border: 1px solid $c-dark-bg;
+    }
+    &::-moz-focus-inner {
+      border: none; /* Remove browser's padding around color in color picker */
+      padding: 0; /* Remove browser's padding around color in color picker */
+    }
+  }
+}

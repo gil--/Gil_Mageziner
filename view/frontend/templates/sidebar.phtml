@@ -1,0 +1,216 @@
+<sidebar id="mageziner" class="mageziner">
+  <button class="js-mgz-close mgz-close" type="button">
+    <svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16"><g> <path fill="#444444" d="M5,5V1c0-0.6-0.4-1-1-1S3,0.4,3,1v4c0,0.6,0.4,1,1,1S5,5.6,5,5z"></path> <path fill="#444444" d="M1,11c0,1.3,0.9,2.4,2,2.8c0,0.1,0,0.1,0,0.2v1c0,0.6,0.4,1,1,1s1-0.4,1-1v-1c0-0.1,0-0.1,0-0.2 c1.2-0.4,2-1.5,2-2.8c0-1.7-1.3-3-3-3S1,9.3,1,11z"></path> <path data-color="color-2" fill="#444444" d="M11,11v4c0,0.6,0.4,1,1,1s1-0.4,1-1v-4c0-0.6-0.4-1-1-1S11,10.4,11,11z"></path> <path data-color="color-2" fill="#444444" d="M9,5c0,1.7,1.3,3,3,3s3-1.3,3-3c0-1.3-0.9-2.4-2-2.8c0-0.1,0-0.1,0-0.2V1c0-0.6-0.4-1-1-1 s-1,0.4-1,1v1c0,0.1,0,0.1,0,0.2C9.9,2.6,9,3.7,9,5z"></path> </g></svg>
+    <span class="mgz-visuallyhidden">Close</span></button>
+  <div class="mageziner__container">
+  <header class="mageziner__header">
+    <h2>Mageziner Proof of Concept</h2>
+  </header>
+  <div class="mageziner__panel mageziner__panel--visible">
+     <section class="mageziner__section">
+      <h2 class="mageziner__title peekaboo"><?php echo __('Branding') ?></h2>
+
+      <ul class="mgz-options">
+        <li>
+          <label class="mgz-option__label">Logo</label>
+          <input class="js-mgz-input" type="url" placeholder="https://magento.com/sites/all/themes/mag_redesign/images/magento-logo.svg" data-var=".logo img" data-type="img" />
+        </li>
+       </ul>
+    </section>
+     <section class="mageziner__section">
+      <h2 class="mageziner__title peekaboo">Colors</h2>
+
+      <ul class="mgz-options">
+        <li>
+          <label class="mgz-option__label">Primary</label>
+          <div class="mgz-color-input">
+            <input class="js-mgz-input" type="color" name="color__primary" data-var="--color-text" data-type="css" />
+            <input class="js-mgz-input" type="text" data-var="--color-text" data-type="css" disabled />
+          </div>
+        </li>
+        <li><label class="mgz-option__label">Secondary</label>
+          <div class="mgz-color-input">
+            <input class="js-mgz-input" type="color" name="color__secondary" data-var="--color-secondary" data-type="css" />
+            <input class="js-mgz-input" type="text" data-var="--color-secondary" data-type="css" disabled />
+          </div>
+        </li>
+        <li><label class="mgz-option__label">Link Color</label>
+          <div class="mgz-color-input">
+            <input class="js-mgz-input" type="color" name="color__link" data-var="--color-link" data-type="css" />
+            <input class="js-mgz-input" type="text" data-var="--color-link" data-type="css" disabled />
+          </div>
+        </li>
+      </ul>
+
+    </section>
+    <section class="mageziner__section">
+      <h2 class="mageziner__title peekaboo">Typography</h2>
+
+      <ul class="mgz-options">
+        <li>
+          <label class="mgz-option__label">Primary Font</label>
+          <select class="js-mgz-input js-font-data" name="font__primary" data-var="--font-primary" data-type="font">
+          </select>
+        </li>
+
+        <li>
+          <label class="mgz-option__label">Secondary Font</label>
+          <label class="mgz-checkbox"><input type="checkbox" checked /> Use Primary Font</label>
+        </li>
+
+        <li>
+           <label class="mgz-option__label">Body Font Size</label>
+          <input class="js-mgz-input" type="text" placeholder="16px" data-var="--font-size--body" data-type="css" />
+        </li>
+    </section>
+  </div>
+  <footer class="mageziner__footer">
+    <button class="mgz-button-transparent" type="button"><svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16"><g><rect x="6" y="14" fill="#444444" width="4" height="2"></rect> <rect x="6" fill="#444444" width="4" height="2"></rect> <rect x="14" y="6" fill="#444444" width="2" height="4"></rect> <rect y="6" fill="#444444" width="2" height="4"></rect> <polygon data-color="color-2" fill="#444444" points="7,12 9,12 9,8 12,8 8,4 4,8 7,8 "></polygon> <path fill="#444444" d="M2,2h2V0H1C0.4,0,0,0.4,0,1v3h2V2z"></path> <path fill="#444444" d="M15,0h-3v2h2v2h2V1C16,0.4,15.6,0,15,0z"></path> <path fill="#444444" d="M14,14h-2v2h3c0.6,0,1-0.4,1-1v-3h-2V14z"></path> <path fill="#444444" d="M2,12H0v3c0,0.6,0.4,1,1,1h3v-2H2V12z"></path></g></svg> Import</button>
+      <button class="mgz-button-transparent" type="button"><svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16"><g> <path fill="#444444" d="M12.7,11.7l-1.4-1.4L13.6,8l-2.3-2.3l1.4-1.4l3,3c0.4,0.4,0.4,1,0,1.4L12.7,11.7z"></path> <path fill="#444444" d="M3.3,11.7l-3-3c-0.4-0.4-0.4-1,0-1.4l3-3l1.4,1.4L2.4,8l2.3,2.3L3.3,11.7z"></path> <path data-color="color-2" fill="#444444" d="M6,15c-0.1,0-0.2,0-0.3-0.1c-0.5-0.2-0.8-0.7-0.6-1.3l4-12c0.2-0.5,0.7-0.8,1.3-0.6 c0.5,0.2,0.8,0.7,0.6,1.3l-4,12C6.8,14.7,6.4,15,6,15z"></path> </g></svg> Export</button>
+  </footer>
+    </div>
+</sidebar>
+
+
+<script>
+/*
+
+WARNING. SHIT IS POORLY CODED. 💩
+
+*/
+
+require(['jquery', 'mageziner/select2', 'mageziner/peekaboo'], function($) {
+
+  $('.peekaboo').peekaboo(); // init peekaboo
+
+  var magezinerData = {};
+
+  $(document).ready(function () {
+    populateMagezinerFromSession();
+  });
+
+  /*
+      Google Font Loader
+  */
+  // Load a Google font by name.
+  function loadFont(font) {
+    WebFont.load({
+      google: {
+        families: [font]
+      }
+    });
+  };
+
+  /*
+      Mageziner Data Logic
+  */
+  $(document).on('click', '.js-mgz-close', function () {
+    $('#mageziner').toggleClass('mageziner--open');
+  });
+
+  $(document).on('change', '.js-mgz-input', function () {
+    var $this = $(this);
+
+    if (!$this.val()) {
+      return false;
+    }
+
+    updateDOMData($this);
+  });
+
+  // change color input & picker together
+  $(document).on('change', '.mgz-color-input input', function () {
+    if ($(this).attr('type') == 'color') {
+      $(this).siblings('[type="text"]').val($(this).val());
+    } else if ($(this).attr('type') == 'text') {
+      $(this).siblings('[type="color"]').val($(this).val());
+    }
+  });
+
+  function updateDOMData(element) {
+    var optionType = element.data('type');
+    var optionVar = element.data('var');
+    var optionValue = element.val();
+
+    if (!optionValue) {
+      return false;
+    }
+
+    if (optionType == 'css') {
+      document.documentElement.style.setProperty(optionVar, optionValue);
+    } else if (optionType == 'img') {
+      // TODO: Check for valid URL string or evne better CURL img to ensure it exists
+      // $(this).attr('placeholder')
+      $(optionVar).attr('src', optionValue);
+    } else if (optionType == 'font') {
+      loadFont(optionValue);
+      document.documentElement.style.setProperty(optionVar, optionValue);
+      // text.style.fontFamily = font;
+    }
+
+    magezinerData[optionVar] = optionValue;
+    updateMagezinerData();
+  }
+
+  /*
+      Storage
+   */
+  function updateMagezinerData() {
+    // Stringify Object & Store it
+    localStorage.setItem('mageziner-data', JSON.stringify(magezinerData));
+  }
+
+  function getMagezinerData() {
+    // READ STRING FROM LOCAL STORAGE
+    var magezinerStoreData = localStorage.getItem('mageziner-data');
+
+    if (!magezinerStoreData) {
+      return false;
+    }
+
+    // CONVERT STRING TO REGULAR JS OBJECT
+    var magezinerObj = JSON.parse(magezinerStoreData);
+
+    return magezinerObj;
+  }
+
+  function populateMagezinerFromSession() {
+    var data = getMagezinerData();
+    magezinerData = data || {};
+
+    if (!data) {
+      return false;
+    }
+
+    $('.js-mgz-input').each(function () {
+      var inputName = $(this).data('var');
+
+      if (data.hasOwnProperty(inputName)) {
+        $(this).val(data[inputName]);
+        updateDOMData($(this));
+      }
+    });
+
+    // DEBUG SHOW DATA
+    console.log(data);
+  }
+
+  /*
+    Populate Font Select with Google Font Choices
+  */
+  var loadGoogleFonts = $.get("https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=AIzaSyA3LulzdpCqe4OmMqYOtr3rUlUIwMXE2i0", function (data) {
+
+    var fonts = [];
+
+    $.each(data.items, function (index, value) {
+      fonts.push(value.family);
+    });
+
+    $(".js-font-data").select2({ data: fonts });
+
+    // TODO: Select font value if in localstorage
+  }).always(function () {
+    //console.log('checked google fonts');
+  });
+});
+</script>
