@@ -1,34 +1,5 @@
-:root {
-  --color-text: black;
-  --font-primary: "Comic Sans MS";
-  --color-link: orange;
-  --font-size--body: 16px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--font-primary);
-  color: var(--color-text);
-  font-size: var(--font-size--body);
-}
-
-a {
-  color: var(--color-link);
-}
-
-[hidden] {
+.mageziner [hidden] {
   display: none !important;
-}
-
-.main-content {
-  text-align: center;
-}
-
-.logo {
-  max-width: 250px;
 }
 
 .mageziner {
