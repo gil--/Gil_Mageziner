@@ -1,6 +1,6 @@
 var gulp            = require('gulp');
 var postcss         = require('gulp-postcss');
-var autoprefixer    = require('autoprefixer-core');
+var autoprefixer    = require('autoprefixer');
 var sass            = require('gulp-sass');
 var csswring        = require('csswring');
 var watch           = require('gulp-watch');
