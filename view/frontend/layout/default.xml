@@ -6,6 +6,7 @@
         <css ifconfig="design/mageziner/enable_frontend" src="Gil_Mageziner::css/styles.css" />
     </head>
     <body>
+        <attribute name="class" value="mageziner-loading"/>
         <referenceContainer name="before.body.end">
             <block ifconfig="design/mageziner/enable_frontend" class="Magento\Framework\View\Element\Template" name="gil_mageziner_sidebar"  template="Gil_Mageziner::sidebar.phtml"/>
         </referenceContainer>
