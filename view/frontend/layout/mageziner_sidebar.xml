@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" src_type="url"/>
         <link rel="stylesheet" type="text/css" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
         <css src="Gil_Mageziner::css/styles.css" />
     </head>
