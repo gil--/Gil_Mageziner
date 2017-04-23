@@ -43,7 +43,7 @@ class Mageziner extends \Magento\Framework\View\Element\Template
      *
      * @return bool
      */
-    protected function withinSelectedGroup() {
+    public function withinSelectedGroup() {
         $customerGroupId = $this->_customerSession->getCustomerGroupId();
         $whitelistedGroupIds = explode(",", $this->getConfig('design/mageziner/customer_group')); // string is returned with multiple group IDs seperated by a ','
 
@@ -52,17 +52,5 @@ class Mageziner extends \Magento\Framework\View\Element\Template
         }
 
         return false;
-    }
-
-    /**
-     * @return
-     */
-    protected function _toHtml()
-    {
-        if ($this->getConfig('design/mageziner/enable_frontend') && $this->withinSelectedGroup()) {
-            return parent::_toHtml();
-        }
-
-        return '';
     }
 }
