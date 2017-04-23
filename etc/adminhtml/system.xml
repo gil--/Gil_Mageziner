@@ -10,6 +10,28 @@
                     <comment>Enable frontend</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="api_google" translate="label comment" type="text" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google API Key</label>
+                    <comment>https://developers.google.com/fonts/docs/developer_api#APIKey</comment>
+                     <depends>
+                        <field id="enable_frontend">1</field>
+                    </depends>
+                </field>
+                <field id="api_typekit" translate="label comment" type="text" sortOrder="20"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Typekit API Key</label>
+                    <comment>https://typekit.com/docs/api/auth</comment>
+                    <depends>
+                        <field id="enable_frontend">1</field>
+                    </depends>
+                </field>
+                <field id="customer_group" translate="label comment" type="multiselect" sortOrder="20"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show to Selected Customer Groups</label>
+                    <comment>Mageziner will only be shown to selected groups</comment>
+                    <depends>
+                        <field id="enable_frontend">1</field>
+                    </depends>
+                    <source_model>Magento\Customer\Model\Config\Source\Group</source_model>
+                </field>
             </group>
         </section>
     </system>
