@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" src_type="url"/>
+        <script ifconfig="design/mageziner/enable_frontend" src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" src_type="url"/>
         <link rel="stylesheet" type="text/css" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
         <css ifconfig="design/mageziner/enable_frontend" src="Gil_Mageziner::css/styles.css" />
     </head>
     <body>
-        <attribute name="class" value="mageziner-loading"/>
+        <!--<attribute name="class" value="mageziner-loading" /> TODO: add only if block renders... -->
         <referenceContainer name="before.body.end">
-            <block ifconfig="design/mageziner/enable_frontend" class="Magento\Framework\View\Element\Template" name="gil_mageziner_sidebar"  template="Gil_Mageziner::sidebar.phtml"/>
+            <block class="Gil\Mageziner\Block\Mageziner" name="gil_mageziner_sidebar"  template="Gil_Mageziner::sidebar.phtml"/>
         </referenceContainer>
     </body>
 </page>
