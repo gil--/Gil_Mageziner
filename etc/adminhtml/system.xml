@@ -30,7 +30,7 @@
                     <depends>
                         <field id="enable_frontend">1</field>
                     </depends>
-                    <source_model>Magento\Customer\Model\Config\Source\Group</source_model>
+                    <source_model>Gil\Mageziner\Model\Adminhtml\Source\CustomerGroup</source_model>
                 </field>
             </group>
         </section>
