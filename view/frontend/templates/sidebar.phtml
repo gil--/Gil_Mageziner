@@ -228,6 +228,7 @@ require(['jquery', 'mageziner/select2', 'mageziner/peekaboo'], function($) {
     magezinerData = data || {};
 
     if (!data) {
+      $('body').addClass('mageziner-loaded');
       return false;
     }
 
