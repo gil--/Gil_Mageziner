@@ -6,68 +6,99 @@
   <div class="mageziner__container">
   <header class="mageziner__header">
     <h2><?php echo __('Mageziner') ?></h2>
+    <button class="js-mgz-close mgz-button--transparent" type="button">
+      <svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16"><g> <path fill="#444444" d="M14.7,1.3c-0.4-0.4-1-0.4-1.4,0L8,6.6L2.7,1.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L6.6,8l-5.3,5.3 c-0.4,0.4-0.4,1,0,1.4C1.5,14.9,1.7,15,2,15s0.5-0.1,0.7-0.3L8,9.4l5.3,5.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L9.4,8l5.3-5.3C15.1,2.3,15.1,1.7,14.7,1.3z"></path> </g></svg>
+    </button>
   </header>
-  <div class="mageziner__panel mageziner__panel--visible">
-     <section class="mageziner__section">
-      <h2 class="mageziner__title peekaboo"><?php echo __('Branding') ?></h2>
 
-      <ul class="mgz-options">
-        <li>
-          <label class="mgz-option__label">Logo</label>
-          <input class="js-mgz-input" type="url" placeholder="https://magento.com/sites/all/themes/mag_redesign/images/magento-logo.svg" data-var=".logo img" data-type="img" />
-        </li>
-       </ul>
-    </section>
-     <section class="mageziner__section">
-      <h2 class="mageziner__title peekaboo">Colors</h2>
+  <nav class="mageziner__nav--tabs">
+    <ul>
+      <li><button class="active" type="button" aria-controls="tab-theme" aria-expanded="true">
+        <svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16"><g> <path fill="#444444" d="M15,0H3C2.4,0,2,0.4,2,1v1H1C0.4,2,0,2.4,0,3v6c0,0.6,0.4,1,1,1h6v6h4V9c0-0.6-0.4-1-1-1H2V5 c0,0.6,0.4,1,1,1h12c0.6,0,1-0.4,1-1V1C16,0.4,15.6,0,15,0z"></path> <path data-color="color-2" fill="#444444" d="M12,12.1c0,1.1,0.9,1.9,2,1.9s2-0.9,2-1.9c0-1.1-2-3.9-2-3.9S12,11,12,12.1z"></path> </g></svg>
+        <span><?php echo __('Theme') ?></span>
+      </button></li>
+      <li><button type="button" aria-controls="tab-blocks">
+        <svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16"><g> <path fill="#444444" d="M6,9H1C0.448,9,0,8.552,0,8V1c0-0.552,0.448-1,1-1h5c0.552,0,1,0.448,1,1v7C7,8.552,6.552,9,6,9z"></path> <path data-color="color-2" fill="#444444" d="M6,16H1c-0.552,0-1-0.448-1-1v-3c0-0.552,0.448-1,1-1h5c0.552,0,1,0.448,1,1v3 C7,15.552,6.552,16,6,16z"></path> <path data-color="color-2" fill="#444444" d="M15,6h-5C9.448,6,9,5.552,9,5V1c0-0.552,0.448-1,1-1h5c0.552,0,1,0.448,1,1v4 C16,5.552,15.552,6,15,6z"></path> <path fill="#444444" d="M15,16h-5c-0.552,0-1-0.448-1-1V9c0-0.552,0.448-1,1-1h5c0.552,0,1,0.448,1,1v6C16,15.552,15.552,16,15,16z"></path> </g></svg>
+        <span><?php echo __('Blocks') ?></span>
+      </button></li>
+    </ul>
+  </nav>
 
-      <ul class="mgz-options">
-        <li>
-          <label class="mgz-option__label">Primary</label>
-          <div class="mgz-color-input">
-            <input class="js-mgz-input" type="color" name="color__primary" data-var="--color-primary" data-type="css" />
-            <input class="js-mgz-input" type="text" data-var="--color-primary" data-type="css" disabled />
-          </div>
-        </li>
-        <li><label class="mgz-option__label">Secondary</label>
-          <div class="mgz-color-input">
-            <input class="js-mgz-input" type="color" name="color__secondary" data-var="--color-secondary" data-type="css" />
-            <input class="js-mgz-input" type="text" data-var="--color-secondary" data-type="css" disabled />
-          </div>
-        </li>
-        <li><label class="mgz-option__label">Link Color</label>
-          <div class="mgz-color-input">
-            <input class="js-mgz-input" type="color" name="color__link" data-var="--color-link" data-type="css" />
-            <input class="js-mgz-input" type="text" data-var="--color-link" data-type="css" disabled />
-          </div>
-        </li>
-      </ul>
+  <div class="mageziner__panels">
+    <div id="tab-theme" class="mageziner__panel">
+      <section class="mageziner__section">
+        <h2 class="mageziner__title peekaboo"><?php echo __('Branding') ?></h2>
+        <ul class="mgz-options">
+          <li>
+            <label class="mgz-option__label">
+              Logo
+            </label>
+            <input class="js-mgz-input" type="url" placeholder="https://magento.com/sites/all/themes/mag_redesign/images/magento-logo.svg" data-var=".logo img" data-type="img" />
+          </li>
+        </ul>
+      </section>
+      <section class="mageziner__section">
+        <h2 class="mageziner__title peekaboo">Colors</h2>
 
-    </section>
-    <section class="mageziner__section">
-      <h2 class="mageziner__title peekaboo">Typography</h2>
+        <ul class="mgz-options">
+          <li>
+            <label class="mgz-option__label">Primary</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__primary" data-var="--color-primary" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-primary" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Secondary Nav Background Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__secondary" data-var="--secondary__color__light" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--secondary__color__light" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Secondary Nav Link Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__secondary" data-var="--nav__color" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--nav__color" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Link Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__link" data-var="--color-link" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-link" data-type="css" disabled />
+            </div>
+          </li>
+        </ul>
 
-      <ul class="mgz-options">
-        <li>
-          <label class="mgz-option__label">Primary Font</label>
-          <select class="js-mgz-input js-font-data" name="font__primary" data-var="--font-primary" data-type="font">
-          </select>
-        </li>
+      </section>
+      <section class="mageziner__section">
+        <h2 class="mageziner__title peekaboo">Typography</h2>
 
-        <li>
-          <label class="mgz-option__label">Secondary Font</label>
-          <label class="mgz-checkbox"><input type="checkbox" checked /> Use Primary Font</label>
-        </li>
+        <ul class="mgz-options">
+          <li>
+            <label class="mgz-option__label">Primary Font</label>
+            <select class="js-mgz-input js-font-data" name="font__primary" data-var="--font-primary" data-type="font">
+            </select>
+          </li>
 
-        <li>
-           <label class="mgz-option__label">Body Font Size</label>
-          <input class="js-mgz-input" type="text" placeholder="16px" data-var="--font-size--body" data-type="css" />
-        </li>
-    </section>
+          <li>
+            <label class="mgz-option__label">Secondary Font</label>
+            <label class="mgz-checkbox"><input type="checkbox" checked /> Use Primary Font</label>
+          </li>
+
+          <li>
+            <label class="mgz-option__label">Body Font Size</label>
+            <input class="js-mgz-input" type="text" placeholder="16px" data-var="--font-size--body" data-type="css" />
+          </li>
+      </section>
+    </div>
+
+    <div id="tab-blocks" class="mageziner__panel">
+      <p><svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24"><g> <path fill="#ffffff" d="M12,0C6.4858398,0,2,4.4858398,2,10v12c0,0.3466797,0.1796875,0.668457,0.4741211,0.8505859 c0.2954102,0.1821289,0.6630859,0.1982422,0.9731445,0.0439453l3.5981445-1.7993164l4.5830078,1.8334961 c0.2392578,0.0947266,0.5039062,0.0947266,0.7431641,0l4.5830078-1.8334961l3.5981445,1.7993164 C20.6938477,22.9648438,20.847168,23,21,23c0.1826172,0,0.3652344-0.050293,0.5258789-0.1494141 C21.8203125,22.668457,22,22.3466797,22,22V10C22,4.4858398,17.5141602,0,12,0z M8,13c-1.1045532,0-2-0.8954468-2-2 c0-1.1046143,0.8954468-2,2-2s2,0.8953857,2,2C10,12.1045532,9.1045532,13,8,13z M16,13c-1.1045532,0-2-0.8954468-2-2 c0-1.1046143,0.8954468-2,2-2s2,0.8953857,2,2C18,12.1045532,17.1045532,13,16,13z"></path> </g></svg> No blocks found...</p>
+    </div>
   </div>
+
   <footer class="mageziner__footer">
-    <button class="mgz-button-transparent" type="button"><svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16"><g><rect x="6" y="14" fill="#444444" width="4" height="2"></rect> <rect x="6" fill="#444444" width="4" height="2"></rect> <rect x="14" y="6" fill="#444444" width="2" height="4"></rect> <rect y="6" fill="#444444" width="2" height="4"></rect> <polygon data-color="color-2" fill="#444444" points="7,12 9,12 9,8 12,8 8,4 4,8 7,8 "></polygon> <path fill="#444444" d="M2,2h2V0H1C0.4,0,0,0.4,0,1v3h2V2z"></path> <path fill="#444444" d="M15,0h-3v2h2v2h2V1C16,0.4,15.6,0,15,0z"></path> <path fill="#444444" d="M14,14h-2v2h3c0.6,0,1-0.4,1-1v-3h-2V14z"></path> <path fill="#444444" d="M2,12H0v3c0,0.6,0.4,1,1,1h3v-2H2V12z"></path></g></svg> Import</button>
-      <button class="mgz-button-transparent" type="button"><svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16"><g> <path fill="#444444" d="M12.7,11.7l-1.4-1.4L13.6,8l-2.3-2.3l1.4-1.4l3,3c0.4,0.4,0.4,1,0,1.4L12.7,11.7z"></path> <path fill="#444444" d="M3.3,11.7l-3-3c-0.4-0.4-0.4-1,0-1.4l3-3l1.4,1.4L2.4,8l2.3,2.3L3.3,11.7z"></path> <path data-color="color-2" fill="#444444" d="M6,15c-0.1,0-0.2,0-0.3-0.1c-0.5-0.2-0.8-0.7-0.6-1.3l4-12c0.2-0.5,0.7-0.8,1.3-0.6 c0.5,0.2,0.8,0.7,0.6,1.3l-4,12C6.8,14.7,6.4,15,6,15z"></path> </g></svg> Export</button>
+    <div class="mageziner__copyright">Made by <a href="http://gil.nyc">Gil</a> <a href="http://wwf.panda.org/what_we_do/endangered_species/giant_panda/" rel="noopener noreferrer" target="_blank">🐼</a></div>
+    <pre><br>░░░░░░░░▄██▄░░░░░░▄▄░░<br>░░░░░░░▐███▀░░░░░▄███▌<br>░░▄▀░░▄█▀▀░░░░░░░░▀██░<br>░█░░░██░░░░░░░░░░░░░░░<br>█▌░░▐██░░▄██▌░░▄▄▄░░░▄<br>██░░▐██▄░▀█▀░░░▀██░░▐▌<br>██▄░▐███▄▄░░▄▄▄░▀▀░▄██<br>▐███▄██████▄░▀░▄█████▌<br>▐████████████▀▀██████░<br>░▐████▀██████░░█████░░<br>░░░▀▀▀░░█████▌░████▀░░<br>░░░░░░░░░▀▀███░▀▀▀░░░░ </pre>
   </footer>
     </div>
 </sidebar>
@@ -80,13 +111,30 @@ WARNING. SHIT IS POORLY CODED. 💩
 
 */
 
-require(['jquery', 'mageziner/select2', 'mageziner/peekaboo'], function($) {
+require(['jquery', 'mageziner/select2', 'mageziner/peekaboo', 'webfont'], function($, select2, peekaboo, WebFont) {
 
-  $('.peekaboo').peekaboo(); // init peekaboo
+  function toggleSections(e) {
+    // We're opening
+    if ($(this).attr('aria-expanded') === 'true') {
+      // Close any other things that were already open
+      $('.mageziner__title.peekaboo button[aria-expanded="true"]').not(this).trigger('click.peekaboo');
+    }
+  }
+
+  function toggleTabs(e) {
+    // We're opening
+    if ($(this).attr('aria-expanded') === 'true') {
+      // Close any other things that were already open
+      $('.mageziner__nav--tabs button[aria-expanded="true"]').not(this).trigger('click.peekaboo');
+    }
+  }
 
   var magezinerData = {};
 
   $(document).ready(function () {
+    $('.peekaboo').peekaboo({ callback: toggleSections }); // init peekaboo for global
+    $('.mageziner__nav--tabs button').peekaboo({ callback: toggleTabs }); // init peekaboo for tabs
+
     populateMagezinerFromSession();
   });
 
@@ -180,6 +228,7 @@ require(['jquery', 'mageziner/select2', 'mageziner/peekaboo'], function($) {
     magezinerData = data || {};
 
     if (!data) {
+      $('body').addClass('mageziner-loaded');
       return false;
     }
 
@@ -194,12 +243,14 @@ require(['jquery', 'mageziner/select2', 'mageziner/peekaboo'], function($) {
 
     // DEBUG SHOW DATA
     console.log(data);
+
+    $('body').addClass('mageziner-loaded');
   }
 
   /*
     Populate Font Select with Google Font Choices
   */
-  var loadGoogleFonts = $.get("https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=AIzaSyA3LulzdpCqe4OmMqYOtr3rUlUIwMXE2i0", function (data) {
+  var loadGoogleFonts = $.get("https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=<?php echo $block->getConfig('design/mageziner/api_google'); ?>", function (data) {
 
     var fonts = [];
 

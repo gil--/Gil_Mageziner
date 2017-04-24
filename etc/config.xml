@@ -4,6 +4,7 @@
         <design>
             <mageziner>
                 <enable_frontend>1</enable_frontend>
+                <api_google>AIzaSyA3LulzdpCqe4OmMqYOtr3rUlUIwMXE2i0</api_google>
             </mageziner>
         </design>
     </default>

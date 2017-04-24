@@ -4,6 +4,16 @@ $c-darkest: #000;
 $c-mgz-brand: #f06212;
 $c-dark-bg: #23262e;
 
+// loader helpers to prevent flash of style changes before Mageziner loads cache
+.mageziner-loading {
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.mageziner-loaded {
+  opacity: 1;
+}
+
 // Wrap ALL styles inside .mageziner or Magento UI will fuck with it.
 .mageziner {
   position: fixed;
@@ -21,7 +31,7 @@ $c-dark-bg: #23262e;
   font-style: normal;
   font-size: 16px;
   color: white;
-  background-color: #171717;
+  background-color: #131418;
   transition: transform .25s ease-in;
   transform: translateX(calc(-100% - 2px));
   box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.55);
@@ -71,37 +81,82 @@ $c-dark-bg: #23262e;
    transform: none;
 
     .mgz-close {
-      transform: translate(25px, 7px);
+      display: none !important;
     }
   }
 
   &__container {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     overflow-y: auto;
   }
 
   &__header {
-    padding: 0 20px;
+    position: relative;
+    padding: 0 10px;
     background-color: $c-dark-bg;
 
     h2 {
       margin: 0;
-      padding: 20px 0;
-      font-size: 18px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-align: center;
+      padding: 8px 0;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+
+    .mgz-button--transparent {
+      position: absolute;
+      top: 50%;
+      right: 9px;
+      padding: 10px;
+      background: #131418;
+      border: 0;
+      border-radius: 3px;
+      transform: translateY(-50%);
+
+      svg {
+        display: block;
+        height: 20px;
+        width: 20px;
+        transition: transform .2s ease;
+
+        * {
+          fill: white;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        svg {
+          transform: rotate(90deg);
+         
+          * {
+            fill: $c-mgz-brand;
+          }
+        }
+      }
     }
   }
 
   &__panel {
     position: relative;
-    background-color: #171717;
+    padding-top: 4px;
+    background-color: black;
     z-index: 1;
-    display: none;
+    
+    > p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-weight: 500;
+      text-align: center;
 
-    &--visible {
-      display: block;
+      svg {
+        margin-right: 10px;
+      }
     }
   }
 
@@ -109,16 +164,17 @@ $c-dark-bg: #23262e;
     position: relative;
     display: block;
     margin: 0 -20px;
-    padding-right: 36px;
-    background-color: black;
+    background-color: #23262e;
 
     button {
       position: relative;
+      width: 100%;
       padding: 15px 20px;
       padding-left: 35px;
       letter-spacing: 3px;
       font-size: 14px;
       font-weight: normal;
+      text-align: left;
       text-transform: uppercase;
       color: $c-mgz-brand;
       background-color: transparent;
@@ -151,12 +207,103 @@ $c-dark-bg: #23262e;
   }
 
   &__section {
-    padding: 0 20px 5px;
+    padding: 0 20px 4px;
     opacity: .8;
     transition: opacity .16s ease-in;
 
     &:hover {
       opacity: 1;
+    }
+  }
+
+  &__copyright {
+    width: 100%;
+    margin-top: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+    background-color: black;
+  }
+
+  &__nav--tabs {
+    background-color: #131418;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px;
+    }
+
+    li {
+      flex: 1;
+      max-width: calc(50% - 3px);
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 0;
+      padding: 8px 20px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: white;
+      background: transparent;
+      border: 2px solid transparent;
+      border-radius: 5px;
+
+      svg {
+        margin-right: 10px;
+
+        * {
+          fill: currentColor;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: white;
+        background: transparent;
+        border: 2px solid #1b1d24;
+      }
+
+      &[aria-expanded="true"] {
+        pointer-events: none; // prevent collapsing tab leading to none open. TODO: add a check in the JS.
+        color: $c-mgz-brand;
+        background-color: #1c1e25;
+      }
+    }
+  }
+
+  &__share {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+
+    button {
+      width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
+      background-color: black;
+      border-radius: 5px;
+
+      &:first-child {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: lighten(black, 5%);
+      }
     }
   }
 
@@ -166,19 +313,79 @@ $c-dark-bg: #23262e;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: auto; // pushes content to bottom.
     padding: 0;
+    padding-top: 20px;
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: .5em;
     color: $c-mgz-brand;
-    border-top: 2px solid black;
 
-    button {
-      max-width: calc(50% - 2px);
-      background-color: black;
+    pre {
+      margin-bottom: 0;
+      color: black;
+      background: #8d8d8d;
+      border: 0;
+      opacity: .15;
     }
   }
+
+  &__button--transparent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    width: calc(100% + 40px);
+    margin: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: $c-mgz-brand;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: white;
+      background: transparent;
+      border: 0;
+    }
+
+    svg {
+      margin-right: 10px;
+
+      * {
+        fill: currentColor;
+      }
+    }
+  }
+
+  &__button--reset {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 20px;
+    min-height: 20px;
+    padding: 0;
+    color: red;
+    transform: translateY(-50%);
+
+    svg {
+      display: block;
+      margin: 0;
+      transition: transform .3s ease-in;
+    }
+
+    &:hover,
+    &:focus {
+      svg {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
 
   // Select 2 Styling Overrides
   .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -271,8 +478,10 @@ $c-dark-bg: #23262e;
   }
 
   .mgz-option__label {
+    position: relative;
     display: block;
     margin-bottom: 5px;
+    padding-right: 25px;
     font-size: 14px;
     letter-spacing: 1px;
   }
@@ -281,36 +490,6 @@ $c-dark-bg: #23262e;
     display: block;
     padding: 5px 10px;
     background-color: $c-dark-bg;
-  }
-
-  .mgz-button-transparent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50px;
-    width: calc(100% + 40px);
-    margin: 0;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-    color: $c-mgz-brand;
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-      color: white;
-    }
-
-    svg {
-      margin-right: 10px;
-
-      * {
-        fill: currentColor;
-      }
-    }
   }
 
   .mgz-color-input {
