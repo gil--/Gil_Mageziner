@@ -1,0 +1,25 @@
+{
+    "blocks": [
+        {
+            "title": "Headings",
+            "fields": [
+                {
+                    "label": "Heading H1",
+                    "type": "heading"
+                },
+                {
+                    "label": "Heading H1",
+                    "type": "",
+                    "dataType": "",
+                    "cssVar": ""
+                },
+                {
+                    "label": "Heading H2",
+                    "type": "",
+                    "dataType": "",
+                    "cssVar": ""
+                }
+            ]
+        }
+    ]
+}
