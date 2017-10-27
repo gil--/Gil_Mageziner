@@ -42,16 +42,22 @@
 
         <ul class="mgz-options">
           <li>
-            <label class="mgz-option__label">Primary</label>
+            <label class="mgz-option__label">Primary Color</label>
             <div class="mgz-color-input">
-              <input class="js-mgz-input" type="color" name="color__primary" data-var="--color-primary" data-type="css" />
-              <input class="js-mgz-input" type="text" data-var="--color-primary" data-type="css" disabled />
+              <input class="js-mgz-input" type="color" name="color__primary" data-var="--primary-color" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--primary-color" data-type="css" disabled />
             </div>
           </li>
-          <li><label class="mgz-option__label">Secondary Nav Background Color</label>
+          <li><label class="mgz-option__label">Secondary Color</label>
             <div class="mgz-color-input">
-              <input class="js-mgz-input" type="color" name="color__secondary" data-var="--secondary__color__light" data-type="css" />
-              <input class="js-mgz-input" type="text" data-var="--secondary__color__light" data-type="css" disabled />
+              <input class="js-mgz-input" type="color" name="color__secondary" data-var="--secondary-color" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--secondary-color" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Text Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__text" data-var="--text-color" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--text-color" data-type="css" disabled />
             </div>
           </li>
           <li><label class="mgz-option__label">Secondary Nav Link Color</label>
@@ -132,10 +138,10 @@ require(['jquery', 'mageziner/select2', 'mageziner/peekaboo', 'webfont'], functi
   var magezinerData = {};
 
   $(document).ready(function () {
-    $('.peekaboo').peekaboo({ callback: toggleSections }); // init peekaboo for global
     $('.mageziner__nav--tabs button').peekaboo({ callback: toggleTabs }); // init peekaboo for tabs
 
     populateMagezinerFromSession();
+    importBlocks();
   });
 
   /*
@@ -264,5 +270,80 @@ require(['jquery', 'mageziner/select2', 'mageziner/peekaboo', 'webfont'], functi
   }).always(function () {
     //console.log('checked google fonts');
   });
+
+  function removeNoBlogsMsg() {
+    $('#tab-blocks > p').remove();
+  }
+
+  function injectSection(key, title) {
+    var section = `
+      <section data-key="${key}" class="mageziner__section">
+          <h2 class="mageziner__title peekaboo">${title}</h2>
+          <ul class="mgz-options"></ul>
+      </section>
+    `;
+
+    var $blockContainer = $('.mageziner__container #tab-blocks');
+    $blockContainer.append(section);
+  }
+
+  function injectField(key, label, type, cssVariable, dataType) {
+    var $section = $(`.mageziner__container #tab-blocks section[data-key="${key}"] .mgz-options`);
+
+    var field = `<li>`;
+    field += `<label class="mgz-option__label">${label}</label>`;
+
+    field += `
+        <div class="mgz-color-input">
+          <input class="js-mgz-input" type="${type}" name="color__primary" data-var="${cssVariable}" data-type="${dataType}">
+          <input class="js-mgz-input" type="text" data-var="${cssVariable}" data-type="${dataType}" disabled="">
+        </div>`;
+
+    field += `</li>`;
+
+    $section.append(field);
+  }
+
+  function injectHeading(key, headingLabel) {
+    var $section = $(`.mageziner__container #tab-blocks section[data-key="${key}"] .mgz-options`);
+    var heading = `<li><h4>${headingLabel}</h4></li>`;
+
+    $section.append(heading);
+  }
+
+  // JSON DATA IMPORT
+  function importBlocks() {
+    $.getJSON("<?php echo $block->getViewFileUrl('Gil_Mageziner::data/blocks.json'); ?>", function(data) {  
+      var blocks = data.blocks;
+
+      if (Object.keys(blocks).length > 0) {
+        removeNoBlogsMsg();
+      }
+
+      $.each( blocks, function( key, val ) {
+        var title = val.title;
+        var fields = val.fields;
+        var sectionKey = key;
+
+        injectSection(key, title);
+
+        $.each( fields, function( key, val ) {
+          var label = val.label;
+          var type = val.type;
+
+          if (type != 'heading') {
+            var cssVariable = val.cssVar;
+            var dataType = val.dataType;
+            
+            injectField(sectionKey, label, type, cssVariable, dataType);
+          } else {
+            injectHeading(sectionKey, label)
+          }
+        });
+      });
+
+      $('.peekaboo').peekaboo({ callback: toggleSections }); // init peekaboo for global
+    });
+  }
 });
 </script>
