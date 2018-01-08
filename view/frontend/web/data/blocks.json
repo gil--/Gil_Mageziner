@@ -1,0 +1,48 @@
+{
+    "blocks": [
+        {
+            "title": "Headings",
+            "fields": [
+                {
+                    "label": "Heading H1",
+                    "type": "heading"
+                },
+                {
+                    "label": "Heading H2",
+                    "type": "heading",
+                    "dataType": "css",
+                    "cssVar": ""
+                },
+                {
+                    "label": "Heading H3",
+                    "type": "",
+                    "dataType": "css",
+                    "cssVar": ""
+                }
+            ]
+        },
+        {
+            "title": "Brand Colors",
+            "fields": [
+                {
+                    "label": "Kravet Brand Color",
+                    "type": "color",
+                    "dataType": "css",
+                    "cssVar": "--color-kravet"
+                },
+                {
+                    "label": "Brunschwig Brand Color",
+                    "type": "color",
+                    "dataType": "css",
+                    "cssVar": "--color-brunschwig"
+                },
+                {
+                    "label": "Leejofa Brand Color",
+                    "type": "color",
+                    "dataType": "css",
+                    "cssVar": "--color-leejofa"
+                }
+            ]
+        }
+    ]
+}

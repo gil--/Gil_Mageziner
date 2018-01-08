@@ -38,26 +38,84 @@
         </ul>
       </section>
       <section class="mageziner__section">
-        <h2 class="mageziner__title peekaboo">Colors</h2>
-
+        <h2 class="mageziner__title peekaboo"><?php echo __('Colors') ?></h2>
         <ul class="mgz-options">
           <li>
-            <label class="mgz-option__label">Primary</label>
+            <label class="mgz-option__label">Red Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__red" data-var="--color-red" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-red" data-type="css" disabled />
+            </div>
+          </li>
+          <li>
+            <label class="mgz-option__label">Green Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__green" data-var="--color-green" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-green" data-type="css" disabled />
+            </div>
+          </li>
+          <li>
+            <label class="mgz-option__label">Orange Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__orange" data-var="--color-orange" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-orange" data-type="css" disabled />
+            </div>
+          </li>
+          <li>
+            <label class="mgz-option__label">Blue Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__blue" data-var="--color-blue" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-blue" data-type="css" disabled />
+            </div>
+          </li>
+          <li>
+            <label class="mgz-option__label">Primary Color</label>
             <div class="mgz-color-input">
               <input class="js-mgz-input" type="color" name="color__primary" data-var="--color-primary" data-type="css" />
               <input class="js-mgz-input" type="text" data-var="--color-primary" data-type="css" disabled />
             </div>
           </li>
-          <li><label class="mgz-option__label">Secondary Nav Background Color</label>
+          <li><label class="mgz-option__label">Secondary Color</label>
             <div class="mgz-color-input">
-              <input class="js-mgz-input" type="color" name="color__secondary" data-var="--secondary__color__light" data-type="css" />
-              <input class="js-mgz-input" type="text" data-var="--secondary__color__light" data-type="css" disabled />
+              <input class="js-mgz-input" type="color" name="color__secondary" data-var="--color-secondary" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-secondary" data-type="css" disabled />
+            </div>
+          </li>
+                    <li>
+            <label class="mgz-option__label">Border Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__border" data-var="--color-border" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-border" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Gray Light</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__gray-light" data-var="--color-gray-light" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-gray-light" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Gray Medium</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__gray-medium" data-var="--color-gray-medium" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-gray-medium" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Gray Dark</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__gray-dark" data-var="--color-gray-dark" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-gray-dark" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Text Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__text" data-var="--color-text" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-text" data-type="css" disabled />
             </div>
           </li>
           <li><label class="mgz-option__label">Secondary Nav Link Color</label>
             <div class="mgz-color-input">
-              <input class="js-mgz-input" type="color" name="color__secondary" data-var="--nav__color" data-type="css" />
-              <input class="js-mgz-input" type="text" data-var="--nav__color" data-type="css" disabled />
+              <input class="js-mgz-input" type="color" name="color__color-nav" data-var="--color-nav" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-nav" data-type="css" disabled />
             </div>
           </li>
           <li><label class="mgz-option__label">Link Color</label>
@@ -70,7 +128,7 @@
 
       </section>
       <section class="mageziner__section">
-        <h2 class="mageziner__title peekaboo">Typography</h2>
+        <h2 class="mageziner__title peekaboo"><?php echo __('Typography') ?></h2>
 
         <ul class="mgz-options">
           <li>
@@ -95,6 +153,8 @@
       <p><svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24"><g> <path fill="#ffffff" d="M12,0C6.4858398,0,2,4.4858398,2,10v12c0,0.3466797,0.1796875,0.668457,0.4741211,0.8505859 c0.2954102,0.1821289,0.6630859,0.1982422,0.9731445,0.0439453l3.5981445-1.7993164l4.5830078,1.8334961 c0.2392578,0.0947266,0.5039062,0.0947266,0.7431641,0l4.5830078-1.8334961l3.5981445,1.7993164 C20.6938477,22.9648438,20.847168,23,21,23c0.1826172,0,0.3652344-0.050293,0.5258789-0.1494141 C21.8203125,22.668457,22,22.3466797,22,22V10C22,4.4858398,17.5141602,0,12,0z M8,13c-1.1045532,0-2-0.8954468-2-2 c0-1.1046143,0.8954468-2,2-2s2,0.8953857,2,2C10,12.1045532,9.1045532,13,8,13z M16,13c-1.1045532,0-2-0.8954468-2-2 c0-1.1046143,0.8954468-2,2-2s2,0.8953857,2,2C18,12.1045532,17.1045532,13,16,13z"></path> </g></svg> No blocks found...</p>
     </div>
   </div>
+
+  <button class="js-mgz-reset" type="button"><?php echo __('Reset') ?></button>
 
   <footer class="mageziner__footer">
     <div class="mageziner__copyright">Made by <a href="http://gil.nyc">Gil</a> <a href="http://wwf.panda.org/what_we_do/endangered_species/giant_panda/" rel="noopener noreferrer" target="_blank">🐼</a></div>
@@ -132,10 +192,15 @@ require(['jquery', 'mageziner/select2', 'mageziner/peekaboo', 'webfont'], functi
   var magezinerData = {};
 
   $(document).ready(function () {
-    $('.peekaboo').peekaboo({ callback: toggleSections }); // init peekaboo for global
     $('.mageziner__nav--tabs button').peekaboo({ callback: toggleTabs }); // init peekaboo for tabs
 
+    populateMagezinerFromCSS();
     populateMagezinerFromSession();
+    importBlocks();
+
+    $('body').addClass('mageziner-loaded');
+
+    $(document).on('click', '.js-mgz-reset', resetMageziner);
   });
 
   /*
@@ -188,7 +253,7 @@ require(['jquery', 'mageziner/select2', 'mageziner/peekaboo', 'webfont'], functi
     if (optionType == 'css') {
       document.documentElement.style.setProperty(optionVar, optionValue);
     } else if (optionType == 'img') {
-      // TODO: Check for valid URL string or evne better CURL img to ensure it exists
+      // TODO: Check for valid URL string or even better CURL img to ensure it exists
       // $(this).attr('placeholder')
       $(optionVar).attr('src', optionValue);
     } else if (optionType == 'font') {
@@ -223,6 +288,23 @@ require(['jquery', 'mageziner/select2', 'mageziner/peekaboo', 'webfont'], functi
     return magezinerObj;
   }
 
+  function populateMagezinerFromCSS() {
+    $('.js-mgz-input[type="text"]').each(function() {
+      var inputName = $(this).data('var');
+      var inputType = $(this).data('type');
+      var themeValue = getComputedStyle(document.body).getPropertyValue(inputName);
+
+      if (inputType == 'css' && themeValue.length) {
+        $(this).val(themeValue);
+
+        if ($(this).parent().hasClass('mgz-color-input')) {
+          console.log('setting color');
+          $(this).siblings('[type="color"]').val(themeValue);
+        }
+      }
+    });
+  }
+
   function populateMagezinerFromSession() {
     var data = getMagezinerData();
     magezinerData = data || {};
@@ -243,8 +325,6 @@ require(['jquery', 'mageziner/select2', 'mageziner/peekaboo', 'webfont'], functi
 
     // DEBUG SHOW DATA
     console.log(data);
-
-    $('body').addClass('mageziner-loaded');
   }
 
   /*
@@ -264,5 +344,88 @@ require(['jquery', 'mageziner/select2', 'mageziner/peekaboo', 'webfont'], functi
   }).always(function () {
     //console.log('checked google fonts');
   });
+
+  // Reset
+  function resetMageziner() {
+    if (confirm('Are you sure you want to reset ALL Mageziner options to their default values?')) {
+      localStorage.removeItem('mageziner-data');
+      window.location.reload(false);
+    }
+  }
+
+  function removeNoBlogsMsg() {
+    $('#tab-blocks > p').remove();
+  }
+
+  function injectSection(key, title) {
+    var section = `
+      <section data-key="${key}" class="mageziner__section">
+          <h2 class="mageziner__title peekaboo">${title}</h2>
+          <ul class="mgz-options"></ul>
+      </section>
+    `;
+
+    var $blockContainer = $('.mageziner__container #tab-blocks');
+    $blockContainer.append(section);
+  }
+
+  function injectField(key, label, type, cssVariable, dataType) {
+    var $section = $(`.mageziner__container #tab-blocks section[data-key="${key}"] .mgz-options`);
+
+    var field = `<li>`;
+    field += `<label class="mgz-option__label">${label}</label>`;
+
+    field += `
+        <div class="mgz-color-input">
+          <input class="js-mgz-input" type="${type}" name="color__primary" data-var="${cssVariable}" data-type="${dataType}">
+          <input class="js-mgz-input" type="text" data-var="${cssVariable}" data-type="${dataType}" disabled="">
+        </div>`;
+
+    field += `</li>`;
+
+    $section.append(field);
+  }
+
+  function injectHeading(key, headingLabel) {
+    var $section = $(`.mageziner__container #tab-blocks section[data-key="${key}"] .mgz-options`);
+    var heading = `<li><h4>${headingLabel}</h4></li>`;
+
+    $section.append(heading);
+  }
+
+  // JSON DATA IMPORT
+  function importBlocks() {
+    $.getJSON("<?php echo $block->getViewFileUrl('Gil_Mageziner::data/blocks.json'); ?>", function(data) {
+      var blocks = data.blocks;
+
+      if (Object.keys(blocks).length > 0) {
+        removeNoBlogsMsg();
+      }
+
+      $.each( blocks, function( key, val ) {
+        var title = val.title;
+        var fields = val.fields;
+        var sectionKey = key;
+
+        injectSection(key, title);
+
+        $.each( fields, function( key, val ) {
+          var label = val.label;
+          var type = val.type;
+
+          if (type != 'heading') {
+            var cssVariable = val.cssVar;
+            var dataType = val.dataType;
+
+            injectField(sectionKey, label, type, cssVariable, dataType);
+          } else {
+            injectHeading(sectionKey, label)
+          }
+        });
+      });
+
+      $('.peekaboo').peekaboo({ callback: toggleSections }); // init peekaboo for global
+    });
+  }
 });
 </script>

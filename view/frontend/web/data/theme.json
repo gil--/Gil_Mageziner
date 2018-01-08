@@ -1,0 +1,154 @@
+{
+    "blocks": [
+        {
+            "title": "Branding",
+            "fields": [
+                {
+                    "label": "Heading H1",
+                    "type": "heading"
+                    <input class="js-mgz-input" type="url" placeholder="https://magento.com/sites/all/themes/mag_redesign/images/magento-logo.svg" data-var=".logo img" data-type="img" />
+                }
+            ],
+            "template": "image",
+        },
+        {
+            "title": "Color",
+            "fields": [
+                {
+                    "label": "Red Color",
+                    "type": "color",
+                    "dataType": "css",
+                    "cssVar": "--color-red"
+                },
+                {
+                    "label": "Green Color",
+                    "type": "color",
+                    "dataType": "css",
+                    "cssVar": "--color-green"
+                }
+            ],
+            "template": "color"
+        },
+        {
+            "title": "Typography",
+            "fields": [
+                {
+                    "label": "Green Color",
+                    "type": "css"
+                }
+            ],
+            "template": "typography"
+        }
+    ]
+}
+
+        <section class="mageziner__section">
+        <h2 class="mageziner__title peekaboo"><?php echo __('Colors') ?></h2>
+        <ul class="mgz-options">
+          <li>
+            <label class="mgz-option__label">Red Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__red" data-var="--color-red" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-red" data-type="css" disabled />
+            </div>
+          </li>
+          <li>
+            <label class="mgz-option__label">Green Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__green" data-var="--color-green" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-green" data-type="css" disabled />
+            </div>
+          </li>
+          <li>
+            <label class="mgz-option__label">Orange Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__orange" data-var="--color-orange" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-orange" data-type="css" disabled />
+            </div>
+          </li>
+          <li>
+            <label class="mgz-option__label">Blue Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__blue" data-var="--color-blue" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-blue" data-type="css" disabled />
+            </div>
+          </li>
+          <li>
+            <label class="mgz-option__label">Primary Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__primary" data-var="--color-primary" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-primary" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Secondary Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__secondary" data-var="--color-secondary" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-secondary" data-type="css" disabled />
+            </div>
+          </li>
+                    <li>
+            <label class="mgz-option__label">Border Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__border" data-var="--color-border" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-border" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Gray Light</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__gray-light" data-var="--color-gray-light" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-gray-light" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Gray Medium</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__gray-medium" data-var="--color-gray-medium" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-gray-medium" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Gray Dark</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__gray-dark" data-var="--color-gray-dark" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-gray-dark" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Text Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__text" data-var="--color-text" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-text" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Secondary Nav Link Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__color-nav" data-var="--color-nav" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-nav" data-type="css" disabled />
+            </div>
+          </li>
+          <li><label class="mgz-option__label">Link Color</label>
+            <div class="mgz-color-input">
+              <input class="js-mgz-input" type="color" name="color__link" data-var="--color-link" data-type="css" />
+              <input class="js-mgz-input" type="text" data-var="--color-link" data-type="css" disabled />
+            </div>
+          </li>
+        </ul>
+
+      </section>
+      <section class="mageziner__section">
+        <h2 class="mageziner__title peekaboo"><?php echo __('Typography') ?></h2>
+
+        <ul class="mgz-options">
+          <li>
+            <label class="mgz-option__label">Primary Font</label>
+            <select class="js-mgz-input js-font-data" name="font__primary" data-var="--font-primary" data-type="font">
+            </select>
+          </li>
+
+          <li>
+            <label class="mgz-option__label">Secondary Font</label>
+            <label class="mgz-checkbox"><input type="checkbox" checked /> Use Primary Font</label>
+          </li>
+
+          <li>
+            <label class="mgz-option__label">Body Font Size</label>
+            <input class="js-mgz-input" type="text" placeholder="16px" data-var="--font-size--body" data-type="css" />
+          </li>
+      </section>

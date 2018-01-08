@@ -37,6 +37,10 @@ $c-dark-bg: #23262e;
   box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.55);
   z-index: 1000;
 
+  * {
+    box-sizing: border-box;
+  }
+
   [hidden] {
     display: none !important;
   }
@@ -169,7 +173,7 @@ $c-dark-bg: #23262e;
     button {
       position: relative;
       width: 100%;
-      padding: 15px 20px;
+      padding: 10px 20px;
       padding-left: 35px;
       letter-spacing: 3px;
       font-size: 14px;
@@ -224,6 +228,10 @@ $c-dark-bg: #23262e;
     letter-spacing: 1px;
     text-align: center;
     background-color: black;
+
+    a {
+      color: $c-mgz-brand;
+    }
   }
 
   &__nav--tabs {
